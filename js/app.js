@@ -1,25 +1,9 @@
-console.log(seattle.cookiesAmount);
-console.log(seattle.custAmount);
+
+renderTableHeader(table, hours);
+
+const seattle = new SalesCity("Seattle", 23, 65, 6.3);
+const tokyo = new SalesCity('Tokyo', 3, 24, 1.2);
+const dubai = new SalesCity('Dubai', 11, 38, 3.7);
+const paris = new SalesCity('Paris', 20, 38, 2.3);
+const lima = new SalesCity('Lima', 2, 16, 4.6);
 console.log(seattle);
-
-container.appendChild(list);
-
-function displayList(arr1, arr2) {
-    for(let i = 0; i < arr1.length; i++) {
-        const listItem = document.createElement('li');
-        list.appendChild(listItem);
-        listItem.textContent = `${arr1[i]}: ${arr2[i]} cookies`;
-    }
-}
-
-displayList(hours, seattle.cookiesAmount);
-
-function displayTotal(arr) {
-    const listItem = document.createElement('li');
-    list.appendChild(listItem);
-    listItem.textContent = `Total: ${count(arr)} cookies`;
-}
-
-displayTotal(seattle.cookiesAmount);
-
-console.log(count(seattle.cookiesAmount));
