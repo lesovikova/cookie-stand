@@ -46,11 +46,24 @@ function renderTableFooter(table){
 }
 
 
-//rendering the cities
-function renderCities() {  
-    const seattle = new SalesCity("Seattle", 23, 65, 6.3);
-    const tokyo = new SalesCity('Tokyo', 3, 24, 1.2);
-    const dubai = new SalesCity('Dubai', 11, 38, 3.7);
-    const paris = new SalesCity('Paris', 20, 38, 2.3);
-    const lima = new SalesCity('Lima', 2, 16, 4.6);
+
+
+//putting cities names into array
+function takeCities() {
+  const citiesNode = document.querySelectorAll('table td:first-of-type');
+  const cities = [];
+  for(let i = 0; i < citiesNode.length; i++) {
+    if(citiesNode[i].textContent && citiesNode[i].textContent != "The sum"){
+    cities.push(citiesNode[i].textContent.toLowerCase());
+    }
+  }
+  return cities;
 }
+
+
+// add the cities objects to the array
+function pushCitiesToArr(item) {  
+  citiesObjects.push(item);
+}
+
+

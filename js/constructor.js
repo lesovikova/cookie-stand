@@ -1,7 +1,9 @@
-"use strict"
+// "use strict"
 
 const hours = ["6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm"];
 const table = document.querySelector('.cookies-display__table');
+const citiesObjects = [];
+
 
 function SalesCity(name, minCust, maxCust, averageCookies) {
     this.name = name;
@@ -10,8 +12,9 @@ function SalesCity(name, minCust, maxCust, averageCookies) {
     this.averageCookies = averageCookies;
     this.cookiesAmount = [];
     this.addAllCookies(hours, this.cookiesAmount, this.cookiesPerHour);
-    this.render(table, this.cookiesAmount);
+
 }
+
 
 SalesCity.prototype.generateCookiesPerHour = function(minCust, maxCust) {
     return Math.round(randomPeople(minCust, maxCust)*this.averageCookies);
@@ -35,11 +38,23 @@ SalesCity.prototype.render = function(table, arr) {
         cell.textContent = arr[i];
     }
     const total = document.createElement('td');
-    // total.style.fontStyle = "italic";
-    // total.style.fontWeight = "bold";
+    total.style.fontStyle = "italic";
+    total.style.fontWeight = "bold";
     row.append(total);
-    total.textContent = count(arr);
+    total.textContent = count(arr);    
 }
 
 
+// SalesCity.prototype.pushCity = function() {
+//     cities.push(this);
+// }
 
+
+
+//render cities from array
+function renderCitiesFromArr(arr){
+    for(let i =0; i < arr.length; i++){
+    //   console.log(citiesObjects[i].generateCookiesPerHour(4, 96));
+      citiesObjects[i].render(table, citiesObjects[i].cookiesAmount);
+    };
+  }
