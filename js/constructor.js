@@ -35,7 +35,11 @@ SalesCity.prototype.render = function(table, arr) {
         cell.textContent = arr[i];
     }
     const total = document.createElement('td');
+    // total.style.fontStyle = "italic";
+    // total.style.fontWeight = "bold";
     row.append(total);
     total.textContent = count(arr);
 }
+
+
 

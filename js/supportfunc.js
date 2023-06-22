@@ -24,3 +24,33 @@ function renderTableHeader(table, arr) {
 }
 
 
+//rendering the total of the hours in all locations
+function renderTableFooter(table){
+  const tableFooter = document.createElement('tr');
+  tableFooter.style.fontWeight = "bold";
+  table.append(tableFooter);
+  const sumName = document.createElement('td');
+  tableFooter.append(sumName);
+  sumName.textContent = "The sum";
+  
+  for(let i = 1; i < hours.length + 2; i++) {
+    const cells = document.querySelectorAll(`td:nth-of-type(${i+1})`);
+    const cellsNum = [];
+    for(let i = 0; i < cells.length; i++) {
+      cellsNum.push(parseInt(cells[i].textContent));   
+    }
+    const tableFooterCell = document.createElement('td');
+    tableFooter.append(tableFooterCell);
+    tableFooterCell.textContent = count(cellsNum);
+  }
+}
+
+
+//rendering the cities
+function renderCities() {  
+    const seattle = new SalesCity("Seattle", 23, 65, 6.3);
+    const tokyo = new SalesCity('Tokyo', 3, 24, 1.2);
+    const dubai = new SalesCity('Dubai', 11, 38, 3.7);
+    const paris = new SalesCity('Paris', 20, 38, 2.3);
+    const lima = new SalesCity('Lima', 2, 16, 4.6);
+}

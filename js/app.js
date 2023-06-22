@@ -1,9 +1,28 @@
 
 renderTableHeader(table, hours);
 
-const seattle = new SalesCity("Seattle", 23, 65, 6.3);
-const tokyo = new SalesCity('Tokyo', 3, 24, 1.2);
-const dubai = new SalesCity('Dubai', 11, 38, 3.7);
-const paris = new SalesCity('Paris', 20, 38, 2.3);
-const lima = new SalesCity('Lima', 2, 16, 4.6);
-console.log(seattle);
+renderCities();
+
+renderTableFooter(table);
+
+
+document.querySelector('form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    table.innerHTML = "";
+    renderTableHeader(table, hours);
+    renderCities();
+    const cityName = e.target.cityName.value.trim();
+    
+    const minAmount = parseInt(e.target.minCustomers.value);
+    const maxAmount = parseInt(e.target.maxCustomers.value);
+    const averageOfCookies = parseFloat(e.target.averageCookies.value);
+
+    if (!minAmount || !maxAmount || !averageOfCookies) {
+        alert("Please input numbers in the appropriate fields!");
+    }
+    
+    const newCity = new SalesCity(cityName, minAmount, maxAmount, averageOfCookies);
+    renderTableFooter(table);
+    document.querySelector('form').reset();
+})
+
