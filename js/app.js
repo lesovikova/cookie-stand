@@ -39,7 +39,6 @@ document.querySelector('form').addEventListener('submit', (e) => {
 
     table.innerHTML = "";
     renderTableHeader(table, hours);
-    console.log(currentCities);
     renderCitiesFromArr(currentCities);
     
     
@@ -49,7 +48,6 @@ document.querySelector('form').addEventListener('submit', (e) => {
     }
     
     const newCity = new SalesCity(cityName, minAmount, maxAmount, averageOfCookies);
-    console.log(citiesObjects);
     newCity.render(table, newCity.cookiesAmount);
     citiesObjects.push(newCity);
     

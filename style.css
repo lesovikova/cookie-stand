@@ -44,7 +44,7 @@ td, th {
     border-radius: 10px;
     border: 1px solid plum;
     box-shadow: inset 1px -1px 7px 0 palevioletred;
-    max-width: 70px;
+    max-width: 50px;
 }
 
 .form input[name="cityName"] {
@@ -52,7 +52,7 @@ td, th {
 }
 
 .form input[name="averageCookies"] {
-    max-width: 40px;
+    max-width: 50px;
 }
 
 .form input[type="text"]:focus-visible {

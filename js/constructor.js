@@ -54,7 +54,6 @@ SalesCity.prototype.render = function(table, arr) {
 //render cities from array
 function renderCitiesFromArr(arr){
     for(let i =0; i < arr.length; i++){
-    //   console.log(citiesObjects[i].generateCookiesPerHour(4, 96));
       citiesObjects[i].render(table, citiesObjects[i].cookiesAmount);
     };
   }
